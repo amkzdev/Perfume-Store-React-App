@@ -5,8 +5,8 @@ import {
     Route,
     Navigate
 } from "react-router-dom"
-import Dashboard from '../../components/dashboard/Dashboard'
-import SignIn from '../../pages/Login/SignIn/SignIn'
+// import Dashboard from '../../components/dashboard/Dashboard'
+// import SignIn from '../../pages/Login/SignIn/SignIn'
 const PublicRoute = () => {
     return (
 
