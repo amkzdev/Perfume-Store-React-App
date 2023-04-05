@@ -12,7 +12,7 @@ const AppRouter = () => {
 
     // const auth = useAuth()
 
-    return ''
+    return <PublicRoute />
 
     // return (auth.loggedIn || !!getToken()
     //     ? <PrivateRoute />
