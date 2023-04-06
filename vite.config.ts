@@ -13,6 +13,7 @@ export default defineConfig({
       createAlis('components'),
       createAlis('pages'),
       createAlis('utils'),
+      createAlis('icons'),
       createRelativeAlias('api'),
       createRelativeAlias('app'),
       createRelativeAlias('assets'),
