@@ -1,10 +1,13 @@
 import React from 'react'
 import bg from '@assets/bg.svg'
+import { Box } from '@mui/material'
+import { Footer } from './components'
 export const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <div style={{ backgroundImage: `url(${bg})`, height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Box sx={{ backgroundImage: `url(${bg})`, height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
             You are in Layout
             {children}
-        </div>
+            <Footer />
+        </Box>
     )
 }
