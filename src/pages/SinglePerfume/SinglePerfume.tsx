@@ -1,16 +1,18 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { Box, Slider, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import { Fall, Spring, Summer, Winter } from '@icons'
 import { Details } from './components/Details'
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
+import { Slider } from './components/Slider'
 
 export const SinglePerfume = () => {
     const { id } = useParams()
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.7)', height: '100%' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.7)',boxSizing:'border-box', height: '100vh',overflow:'hidden' }}>
 
-            {/* <Slider/> */}
+            <Slider />
+
             <Box sx={{ display: 'flex', flexDirection: 'column', p: 6, alignItems: 'center', justifyContent: 'space-between' }}>
 
 
@@ -18,7 +20,7 @@ export const SinglePerfume = () => {
 
                 <Typography fontSize={40} gutterBottom>Home Sport</Typography>
 
-                <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'row' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'row', my: 1 }}>
 
                     <Box sx={{ display: 'flex', alignItems: 'center', width: 'fit-content', my: 0.5 }}>
                         <Spring mode='active' style={{ margin: '20px', transform: 'scale(1.25)' }} />
@@ -39,7 +41,7 @@ export const SinglePerfume = () => {
                 </Box>
 
                 <Typography fontSize={40}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aldfsdfdsfsdfsfsss
                 </Typography>
 
                 <Details />
