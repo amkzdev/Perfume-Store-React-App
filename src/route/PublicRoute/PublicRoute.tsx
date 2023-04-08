@@ -6,6 +6,7 @@ import {
     Navigate
 } from "react-router-dom"
 import { Perfumes } from '../../pages/Perfumes/Perfumes'
+import { SinglePerfume } from '@pages'
 // import Dashboard from '../../components/dashboard/Dashboard'
 // import SignIn from '../../pages/Login/SignIn/SignIn'
 const PublicRoute = () => {
@@ -14,6 +15,7 @@ const PublicRoute = () => {
         <BrowserRouter>
             <Routes>
                 <Route path="/perfumes" element={<Perfumes />} />
+                <Route path="/perfume/:id" element={<SinglePerfume/>} />
                 {/* <Route path="/" element={<Navigate to='/login' />} />
                 <Route path='*' element={<Navigate to='/login' />} /> */}
             </Routes>
