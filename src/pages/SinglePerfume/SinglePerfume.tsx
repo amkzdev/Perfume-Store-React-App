@@ -17,8 +17,14 @@ export const SinglePerfume = () => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aldfsdfdsfsdfsfsss
     </Typography>
 
+    const BuyItem = ({ value, title }: { value: string, title: string }) => <Box display={'flex'} alignItems={'center'} justifyContent={'space-between'} my={1} color={'white'} width={'100%'}>
+        <Typography fontSize={80}>{value}</Typography>
+        &nbsp;
+        <Typography fontSize={40}>{title}</Typography>
+    </Box>
+
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', pb: '100px', justifyContent: 'space-between', background: 'rgba(255,255,255,0.7)', boxSizing: 'border-box', height: '100vh', overflow: 'hidden' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', pb: '80px', justifyContent: 'space-between', background: 'rgba(255,255,255,0.7)', boxSizing: 'border-box', height: '100vh', overflow: 'hidden' }}>
 
             <Slider />
 
@@ -59,16 +65,36 @@ export const SinglePerfume = () => {
                 </Slide>
                 <Slide direction="left" in={mode == 'buy'} mountOnEnter unmountOnExit>
                     <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
+                        <Box sx={{ display: 'flex', flexDirection: 'column', p: 3 }}>
 
-                        <Typography fontSize={60}>Bottle Size: </Typography>
-                        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', my: 0.5 }}>
+                            <Typography fontSize={60}>Bottle Size: </Typography>
+                            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', my: 0.5 }}>
 
-                            {
-                                [50, 100, 150].map(item => <FormControlLabel control={<Checkbox size='medium' sx={{ transform: 'scale(2)', mr: 2 }} />} label={<Typography fontSize={40}>{item}  MML</Typography>} />)
-                            }
+                                {
+                                    [50, 100, 150].map(item => <FormControlLabel control={<Checkbox size='medium' sx={{ transform: 'scale(2)', mr: 2 }} />} label={<Typography fontSize={40}>{item}  MML</Typography>} />)
+                                }
+                            </Box>
+                            <Button onClick={() => setMode('overview')}>Back</Button>
+                            <Desciption />
                         </Box>
-                        <Button onClick={() => setMode('overview')}>Back</Button>
-                        <Desciption />
+
+                        <Box sx={{ backgroundColor: '#1A1C20', width: '100vw', display: 'flex', boxSizing: 'border-box' }}>
+                            <Box sx={{ display: 'flex', flexDirection: 'column', flex: 0.5, justifyContent: 'center', p: 2 }}>
+
+                                <BuyItem title='50mml' value='120' />
+                                <BuyItem title='Tax 1%' value='2.6' />
+                                <BuyItem title='Bottle v1' value='13' />
+                            </Box>
+
+                            <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'center', alignItems: 'center', p: 2 }}>
+
+                                <Typography fontSize={120} color='white'>135.6$</Typography>
+                                <Button sx={{ background: '#F0A500', color: '#000', width: 'fit-content' }} variant='contained'>
+                                    <Typography>Buy Now!</Typography>
+                                </Button>
+                            </Box>
+
+                        </Box>
                     </Box>
                 </Slide>
             </Box >
