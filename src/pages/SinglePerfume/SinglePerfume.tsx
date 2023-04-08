@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Box, Typography, Slide, Button } from '@mui/material'
+import { Box, Typography, Slide, Button, FormControlLabel, Checkbox } from '@mui/material'
 import { Fall, Spring, Summer, Winter } from '@icons'
 import { Details } from './components/Details'
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
@@ -58,13 +58,20 @@ export const SinglePerfume = () => {
                     </Box>
                 </Slide>
                 <Slide direction="left" in={mode == 'buy'} mountOnEnter unmountOnExit>
-                    <Box>
-                        <Typography>Buy </Typography>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
+
+                        <Typography fontSize={60}>Bottle Size: </Typography>
+                        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', my: 0.5 }}>
+
+                            {
+                                [50, 100, 150].map(item => <FormControlLabel control={<Checkbox size='medium' sx={{ transform: 'scale(2)', mr: 2 }} />} label={<Typography fontSize={40}>{item}  MML</Typography>} />)
+                            }
+                        </Box>
                         <Button onClick={() => setMode('overview')}>Back</Button>
                         <Desciption />
                     </Box>
                 </Slide>
-            </Box>
+            </Box >
 
         </Box >
 
