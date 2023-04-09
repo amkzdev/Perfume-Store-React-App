@@ -17,22 +17,25 @@ export const SinglePerfume = () => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aldfsdfdsfsdfsfsss
     </Typography>
 
-    const BuyItem = ({ value, title }: { value: string, title: string }) => <Box display={'flex'} alignItems={'center'} justifyContent={'space-between'} my={1} color={'white'} width={'100%'}>
-        <Typography fontSize={80}>{value}</Typography>
+    const BuyItem = ({ value, title }: { value: string, title: string }) => <Box display={'flex'} alignItems={'center'} my={1} color={'white'} width={'100%'}>
+        <Typography fontSize={80} sx={{ width: "50%" }}>{value}</Typography>
         &nbsp;
-        <Typography fontSize={40}>{title}</Typography>
+        <Typography fontSize={40} >{title}</Typography>
     </Box>
 
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', pb: '80px', justifyContent: 'space-between', background: 'rgba(255,255,255,0.7)', boxSizing: 'border-box', height: '100vh', overflow: 'hidden' }}>
 
             <Slider />
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
-            <Typography fontSize={120}>Desire Blue</Typography>
 
-            <Typography fontSize={40} gutterBottom>Home Sport</Typography>
+                <Typography fontSize={120}>Desire Blue</Typography>
 
-            <Box sx={{ display: 'flex', flexDirection: 'column', px: 6, py: 2, alignItems: 'center', justifyContent: 'space-between' }}>
+                <Typography fontSize={40} gutterBottom>Home Sport</Typography>
+
+            </Box>
+            <Box sx={{ display: 'flex', flexDirection: 'column', px: 6, py: 2, alignItems: 'center', justifyContent: 'space-between', flexBasis: "55%" }}>
 
 
                 <Slide direction="left" in={mode == 'overview'} mountOnEnter unmountOnExit>
@@ -63,40 +66,46 @@ export const SinglePerfume = () => {
                         <Details />
                     </Box>
                 </Slide>
-                <Slide direction="left" in={mode == 'buy'} mountOnEnter unmountOnExit>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-                        <Box sx={{ display: 'flex', flexDirection: 'column', p: 3 }}>
+                <Slide direction="left" in={mode == 'buy'} mountOnEnter unmountOnExit >
+                    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' , justifyContent: 'space-between' ,height:'100%'}}>
+                        <Box sx={{
+                            display: 'flex', flexDirection: 'column', p: 3, justifyContent: 'space-between'
+                        }}>
+                            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                                <Typography fontSize={60}>Bottle Size: </Typography>
+                                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', my: 0.5 }}>
 
-                            <Typography fontSize={60}>Bottle Size: </Typography>
-                            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', my: 0.5 }}>
-
-                                {
-                                    [50, 100, 150].map(item => <FormControlLabel control={<Checkbox size='medium' sx={{ transform: 'scale(2)', mr: 2 }} />} label={<Typography fontSize={40}>{item}  MML</Typography>} />)
-                                }
+                                    {
+                                        [50, 100, 150].map(item => <FormControlLabel control={<Checkbox size='medium' sx={{ transform: 'scale(2)', mr: 2 }} />} label={<Typography fontSize={40}>{item}  MML</Typography>} />)
+                                    }
+                                </Box>
                             </Box>
                             <Button onClick={() => setMode('overview')}>Back</Button>
                             <Desciption />
                         </Box>
 
-                        <Box sx={{ backgroundColor: '#1A1C20', width: '100vw', display: 'flex', boxSizing: 'border-box' }}>
-                            <Box sx={{ display: 'flex', flexDirection: 'column', flex: 0.5, justifyContent: 'center', p: 2 }}>
+                        <Box sx={{ backgroundColor: '#1A1C20', width: '100vw', display: 'flex', boxSizing: 'border-box', p: 2, py: 6 }}>
+                            <Box sx={{ display: 'flex', flexDirection: 'column', flexBasis: '40%', justifyContent: 'center', p: 2 }}>
 
                                 <BuyItem title='50mml' value='120' />
-                                <BuyItem title='Tax 1%' value='2.6' />
+                                {/* <BuyItem title='Tax 1%' value='2.6' /> */}
                                 <BuyItem title='Bottle v1' value='13' />
                             </Box>
 
-                            <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'center', alignItems: 'center', p: 2 }}>
+                            <Box sx={{ display: 'flex', flexDirection: 'column', flexBasis: '60%', justifyContent: 'center', alignItems: 'center', px: 2 }}>
 
-                                <Typography fontSize={120} color='white'>135.6$</Typography>
-                                <Button sx={{ background: '#F0A500', color: '#000', width: 'fit-content' }} variant='contained'>
-                                    <Typography>Buy Now!</Typography>
+                                <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+                                    <Typography fontSize={120} color='white'>135.6</Typography>
+                                    <Typography fontSize={120} color='#F0A500'>&nbsp;$</Typography>
+                                </Box>
+                                <Button sx={{ background: '#F0A500', color: '#000', width: 'fit-content', borderRadius: 40, px: 4 }} variant='contained'>
+                                    <Typography fontSize={80} color={'white'}>Buy Now!</Typography>
                                 </Button>
                             </Box>
 
                         </Box>
                     </Box>
-                </Slide>
+                </Slide >
             </Box >
 
         </Box >
